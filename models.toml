@@ -1,0 +1,34 @@
+# Models of the main experiment. `id` is the model id the endpoint expects. base_url and api_key_env
+# default to OpenRouter; the key is read from the environment variable OPENROUTER_API_KEY.
+# One provider is pinned per model and reasoning is switched off. `extra` is merged into the request
+# body. `send_temperature = false` omits `temperature` from the request (GPT-6 Luna does not accept it).
+
+[defaults]
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY"
+temperature = 0
+max_tokens = 1000
+send_temperature = true
+concurrency = 16
+
+# Gemma 3 27B, served by DeepInfra (fp8).
+[models.gemma-27b]
+id = "google/gemma-3-27b-it"
+concurrency = 32
+extra = { provider = { order = ["DeepInfra"], allow_fallbacks = false } }
+
+# Qwen 3.5 9B, served by Darkbloom.
+[models.qwen-9b]
+id = "qwen/qwen3.5-9b"
+extra = { reasoning = { enabled = false }, provider = { order = ["Darkbloom"], allow_fallbacks = false } }
+
+# GPT-6 Luna, served by OpenAI; one sample per call at its default sampling.
+[models.luna]
+id = "openai/gpt-6-luna"
+send_temperature = false
+extra = { reasoning = { enabled = false }, provider = { order = ["OpenAI"], allow_fallbacks = false } }
+
+# Offline simulated model for tests and dry runs (shared_record/mock.py). No network, no key.
+# It also answers as a coder when given the coding rubric.
+[models.mock]
+id = "mock"

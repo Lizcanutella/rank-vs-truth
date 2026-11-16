@@ -1,0 +1,4 @@
+model,sessions,entries_parsed,notes_parsed,notes_unparsed_n,control_fillers_correct,included
+gemma-27b,6400,1.0,0.9990625,6,0.9825,True
+qwen-9b,6400,1.0,1.0,0,1.0,True
+luna,6400,1.0,1.0,0,0.995625,True

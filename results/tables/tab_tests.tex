@@ -1,0 +1,23 @@
+\multirow{3}{*}{1} & \multirow{3}{*}{\parbox{4.1cm}{\known, concurrent, false instruction, entry: lead vs.\ peer}} & Gemma 27B & 200 & 88.5 & 11.0 & $+$77.5 & [71.5, 83.0] & $<$0.001 & yes \\
+ & & Qwen 9B & 200 & 77.5 & 5.5 & $+$72.0 & [65.5, 78.0] & $<$0.001 & yes \\
+ & & Luna & 200 & 3.5 & 0.5 & $+$3.0 & [0.5, 6.0] & 0.211 & no \\
+\midrule
+\multirow{3}{*}{2} & \multirow{3}{*}{\parbox{4.1cm}{\known, concurrent, lead's false instruction: entry vs.\ private note}} & Gemma 27B & 200 & 88.5 & 1.5 & $+$87.0 & [82.0, 91.5] & $<$0.001 & yes \\
+ & & Qwen 9B & 200 & 77.5 & 8.0 & $+$69.5 & [63.0, 75.5] & $<$0.001 & yes \\
+ & & Luna & 200 & 3.5 & 1.0 & $+$2.5 & [0.0, 5.5] & 0.250 & no \\
+\midrule
+\multirow{3}{*}{3} & \multirow{3}{*}{\parbox{4.1cm}{\known, lead's false instruction, entry: concurrent vs.\ one before}} & Gemma 27B & 200 & 88.5 & 39.5 & $+$49.0 & [42.0, 56.0] & $<$0.001 & yes \\
+ & & Qwen 9B & 200 & 77.5 & 21.5 & $+$56.0 & [48.5, 63.0] & $<$0.001 & yes \\
+ & & Luna & 200 & 3.5 & 7.5 & $-$4.0 & [$-$7.0, $-$1.0] & 0.086 & no \\
+\midrule
+\multirow{3}{*}{4} & \multirow{3}{*}{\parbox{4.1cm}{\nosrc, lead's false instruction, entry: concurrent vs.\ one before}} & Gemma 27B & 200 & 100.0 & 91.5 & $+$8.5 & [5.0, 12.5] & $<$0.001 & yes \\
+ & & Qwen 9B & 200 & 100.0 & 69.0 & $+$31.0 & [25.0, 37.5] & $<$0.001 & yes \\
+ & & Luna & 200 & 8.5 & 5.0 & $+$3.5 & [$-$1.0, 8.5] & 0.250 & no \\
+\midrule
+\multirow{3}{*}{5} & \multirow{3}{*}{\parbox{4.1cm}{Interaction: contrast 3 minus contrast 4 (A, B: the two drops, in points)}} & Gemma 27B & 200\,+\,200 & 49.0 & 8.5 & $+$40.5 & [32.0, 48.5] & $<$0.001 & yes \\
+ & & Qwen 9B & 200\,+\,200 & 56.0 & 31.0 & $+$25.0 & [15.5, 34.5] & $<$0.001 & yes \\
+ & & Luna & 200\,+\,200 & $-$4.0 & 3.5 & $-$7.5 & [$-$13.5, $-$1.5] & 0.072 & no \\
+\midrule
+\multirow{3}{*}{6} & \multirow{3}{*}{\parbox{4.1cm}{\nosrc, one before, false instruction, entry: lead vs.\ peer}} & Gemma 27B & 200 & 91.5 & 72.5 & $+$19.0 & [13.5, 24.5] & $<$0.001 & yes \\
+ & & Qwen 9B & 200 & 69.0 & 43.5 & $+$25.5 & [19.5, 31.5] & $<$0.001 & yes \\
+ & & Luna & 200 & 5.0 & 0.0 & $+$5.0 & [2.0, 8.0] & 0.012 & yes \\
